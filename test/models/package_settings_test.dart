@@ -12,7 +12,7 @@ void main() {
     );
 
     expect(packageSettings.inputFilepath, 'loca.csv');
-    expect(packageSettings.outputDir, DefaultSettings.outputDir);
+    expect(packageSettings.outputDirectory, DefaultSettings.outputDirectory);
     expect(packageSettings.filenamePrepend, DefaultSettings.filenamePrepend);
     expect(packageSettings.csvSettings, isNotNull);
   });
