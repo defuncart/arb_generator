@@ -6,7 +6,7 @@ void main() {
   test('When nullable constructor params are null, expect defaults', () {
     final packageSettings = PackageSettings(
       inputFilepath: 'loca.csv',
-      outputDir: null,
+      outputDirectory: null,
       filenamePrepend: null,
       csvSettings: null,
     );
@@ -20,7 +20,7 @@ void main() {
   test('Expect toString is overridden', () {
     final packageSettings = PackageSettings(
       inputFilepath: 'loca.csv',
-      outputDir: null,
+      outputDirectory: null,
       filenamePrepend: null,
       csvSettings: null,
     );
