@@ -11,6 +11,9 @@ environment:
 
 dependencies:
   csv: ^5.0.0
+  flappy_translator:
+    git:
+      url: https://github.com/smartnsoft/FlappyTranslator
 
 dev_dependencies:
   test: ^1.16.8
