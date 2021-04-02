@@ -16,6 +16,8 @@ dependencies:
 
 dev_dependencies:
   intl_utils: ^2.1.0
+  arb_generator:
+    path: ../
 
 flutter:
   uses-material-design: true
