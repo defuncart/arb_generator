@@ -1,9 +1,11 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flappy_translator/src/services/file_writer/file_writer.dart';
 import 'package:flappy_translator/src/services/parsing/csv_parser.dart';
 import 'package:flappy_translator/src/services/validation/validator.dart';
 
+import '../models/arb/arb_file.dart';
 import '../models/settings/package_settings.dart';
 
 /// A service which generates arb files
@@ -33,6 +35,8 @@ abstract class ARBGenerator {
     final localizationsTable = parser.localizationsTable;
     print('Parsing ${localizationsTable.length} key(s)...');
 
+    final encoder = JsonEncoder.withIndent('  ');
+
     for (final row in localizationsTable) {
       Validator.validateLocalizationTableRow(
         row,
@@ -47,16 +51,23 @@ abstract class ARBGenerator {
         values: parser.getValues(supportedLanguage),
         defaultValues: parser.defaultValues,
       );
+      final prettyContent = encoder.convert(content.toJson());
 
       // write output file
       final path = '${packageSettings.outputDirectory}/${packageSettings.filenamePrepend}$supportedLanguage.arb';
-      print(path);
-      FileWriter().write(contents: content, path: path);
+      FileWriter().write(
+        contents: prettyContent,
+        path: path,
+      );
+
+      print('Generated $path');
     }
+
+    print('All done!');
   }
 }
 
-String _generateARBFile({
+ARBFile _generateARBFile({
   required String langauge,
   required List<String> keys,
   required List<String> values,
@@ -67,18 +78,14 @@ String _generateARBFile({
     exit(0);
   }
 
-  final sb = StringBuffer();
-  sb.writeln('{');
-  sb.writeln('\t\"@@locale\": \"$langauge\",');
+  final messages = <StandardMessage>[];
   for (var i = 0; i < keys.length; i++) {
     final value = i < values.length && values[i].isNotEmpty ? values[i] : defaultValues[i];
-    sb.write('\t\"${keys[i]}": \"$value\"');
-    if (i != keys.length - 1) {
-      sb.write(',');
-    }
-    sb.writeln();
+    messages.add(StandardMessage(
+      key: keys[i],
+      value: value,
+    ));
   }
-  sb.writeln('}');
 
-  return sb.toString();
+  return ARBFile(locale: langauge, messages: messages);
 }
