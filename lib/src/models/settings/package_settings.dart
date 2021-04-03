@@ -6,13 +6,13 @@ class PackageSettings {
   /// The filepath for the input localization file. This must be supplied.
   final String inputFilepath;
 
-  /// A directory for the generated files Defaults to `lib/l10n`.
+  /// A directory for the generated files. Defaults to `lib/l10n`.
   final String outputDirectory;
 
-  /// A directory for the generated files Defaults to `lib/l10n`.
+  /// Text to prepend to filename of generated files. Defaults to empty string.
   final String filenamePrepend;
 
-  /// Text to prepend to filename of generated files. Defaults to empty string.
+  /// A model of csv settings.
   final CSVSettings csvSettings;
 
   /// Constructs a new instance of [PackageSettings]

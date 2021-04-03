@@ -7,7 +7,7 @@ import 'utils/yaml_parser.dart';
 void main() {
   final packageSettings = YamlParser.packageSettingsFromPubspec();
   if (packageSettings == null) {
-    print('Error! Settings for flutter_pseudolocalizor not found in pubspec.');
+    print('Error! Settings for arb_generator not found in pubspec.');
     exit(0);
   }
 
