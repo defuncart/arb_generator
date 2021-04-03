@@ -1,3 +1,4 @@
 keys;description;en;de
 myKey;The conventional newborn programmer greeting;Hello world!;Hallo Welt!
 welcome;A welcome message;Welcome {firstName}!;Willkommen {firstName}!
+numberMessages;An info message about new messages count;{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}};{count, plural, zero{Du hast keine neue Nachrichten} one{Du hast eine neue Nachricht} other{Du hast {count} neue Nachrichten}}

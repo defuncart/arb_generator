@@ -66,6 +66,19 @@ class AppLocalizations {
       args: [firstName],
     );
   }
+
+  /// `{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}}`
+  String numberMessages(num count) {
+    return Intl.plural(
+      count,
+      zero: 'You have no new messages',
+      one: 'You have 1 new message',
+      other: 'You have $count new messages',
+      name: 'numberMessages',
+      desc: 'An info message about new messages count',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

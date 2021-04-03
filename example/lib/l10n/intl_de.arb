@@ -7,5 +7,9 @@
   "welcome": "Willkommen {firstName}!",
   "@welcome": {
     "description": "A welcome message"
+  },
+  "numberMessages": "{count, plural, zero{Du hast keine neue Nachrichten} one{Du hast eine neue Nachricht} other{Du hast {count} neue Nachrichten}}",
+  "@numberMessages": {
+    "description": "An info message about new messages count"
   }
 }
