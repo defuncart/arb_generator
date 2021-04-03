@@ -1,4 +1,4 @@
-import '../configs/default_settings.dart';
+import '../../configs/default_settings.dart';
 import 'csv_settings.dart';
 
 /// A model representing package settings

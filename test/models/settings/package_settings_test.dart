@@ -1,5 +1,5 @@
 import 'package:arb_generator/src/configs/default_settings.dart';
-import 'package:arb_generator/src/models/package_settings.dart';
+import 'package:arb_generator/src/models/settings/package_settings.dart';
 import 'package:test/test.dart';
 
 void main() {

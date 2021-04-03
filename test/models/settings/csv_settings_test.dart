@@ -1,5 +1,5 @@
 import 'package:arb_generator/src/configs/csv_default_settings.dart';
-import 'package:arb_generator/src/models/csv_settings.dart';
+import 'package:arb_generator/src/models/settings/csv_settings.dart';
 import 'package:test/test.dart';
 
 void main() {

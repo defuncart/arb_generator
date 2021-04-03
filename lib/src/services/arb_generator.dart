@@ -4,7 +4,7 @@ import 'package:flappy_translator/src/services/file_writer/file_writer.dart';
 import 'package:flappy_translator/src/services/parsing/csv_parser.dart';
 import 'package:flappy_translator/src/services/validation/validator.dart';
 
-import '../models/package_settings.dart';
+import '../models/settings/package_settings.dart';
 
 /// A service which generates arb files
 abstract class ARBGenerator {

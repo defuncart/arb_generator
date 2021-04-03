@@ -1,4 +1,4 @@
-import '../configs/csv_default_settings.dart';
+import '../../configs/csv_default_settings.dart';
 
 /// A model representing CSV File parsing settings
 class CSVSettings {
