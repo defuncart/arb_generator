@@ -19,5 +19,9 @@
   "unreadEmails": "{howMany, plural, zero{Es gibt keine ungelesenen Emails für {userName}} one{Es gibt eine ungelesene für {userName}} other{Es gibt {howMany} ungelesenen Emails für {userName}}}",
   "@unreadEmails": {
     "description": "How many unread emails for user"
+  },
+  "weatherReaction": "{weatherType, select, sunny{Prima} cloudy{In Ordnung} rainy{Mist} other{Other}}",
+  "@weatherReaction": {
+    "description": "Reaction to types of weather"
   }
 }

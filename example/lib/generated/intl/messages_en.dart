@@ -23,16 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(howMany, userName) => "${Intl.plural(howMany, zero: 'There are no unread emails for ${userName}', one: 'There is 1 unread email for ${userName}', other: 'There are ${howMany} unread emails for ${userName}')}";
 
-  static m2(firstName) => "Welcome ${firstName}!";
+  static m2(weatherType) => "${Intl.select(weatherType, {'sunny': 'Woohoo', 'cloudy': 'Meh', 'rainy': 'Weeh', 'other': 'Other', })}";
 
-  static m3(sex) => "${Intl.gender(sex, female: 'Her book', male: 'His book', other: 'Their book')}";
+  static m3(firstName) => "Welcome ${firstName}!";
+
+  static m4(sex) => "${Intl.gender(sex, female: 'Her book', male: 'His book', other: 'Their book')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "myKey" : MessageLookupByLibrary.simpleMessage("Hello world!"),
     "numberMessages" : m0,
     "unreadEmails" : m1,
-    "welcome" : m2,
-    "whoseBook" : m3
+    "weatherReaction" : m2,
+    "welcome" : m3,
+    "whoseBook" : m4
   };
 }

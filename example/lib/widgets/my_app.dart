@@ -83,6 +83,10 @@ class HomeScreen extends StatelessWidget {
           Text(AppLocalizations.of(context).unreadEmails(0, 'Dash')),
           Text(AppLocalizations.of(context).unreadEmails(1, 'Dash')),
           Text(AppLocalizations.of(context).unreadEmails(42, 'Dash')),
+          SizedBox(height: 8),
+          Text(AppLocalizations.of(context).weatherReaction('sunny')),
+          Text(AppLocalizations.of(context).weatherReaction('cloudy')),
+          Text(AppLocalizations.of(context).weatherReaction('rainy')),
         ],
       ),
     );

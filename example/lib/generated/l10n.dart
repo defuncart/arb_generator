@@ -105,6 +105,22 @@ class AppLocalizations {
       args: [howMany, userName],
     );
   }
+
+  /// `{weatherType, select, sunny{Woohoo} cloudy{Meh} rainy{Weeh} other{Other}}`
+  String weatherReaction(Object weatherType) {
+    return Intl.select(
+      weatherType,
+      {
+        'sunny': 'Woohoo',
+        'cloudy': 'Meh',
+        'rainy': 'Weeh',
+        'other': 'Other',
+      },
+      name: 'weatherReaction',
+      desc: 'Reaction to types of weather',
+      args: [weatherType],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
