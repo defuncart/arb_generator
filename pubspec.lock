@@ -86,7 +86,7 @@ packages:
     source: hosted
     version: "3.0.0"
   csv:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: csv
       url: "https://pub.dartlang.org"
