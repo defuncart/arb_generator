@@ -22,10 +22,11 @@ class PackageSettings {
     required String? filenamePrepend,
     CSVSettings? csvSettings,
   })  : outputDirectory = outputDirectory ?? DefaultSettings.outputDirectory,
-        filenamePrepend = outputDirectory ?? DefaultSettings.filenamePrepend,
+        filenamePrepend = filenamePrepend ?? DefaultSettings.filenamePrepend,
         csvSettings = csvSettings ?? CSVSettings.withDefaultSettings();
 
   /// Returns a String representation of the model.
   @override
-  String toString() => '{inputFilepath: $inputFilepath, outputDirectory: $outputDirectory, csvSettings: $csvSettings';
+  String toString() =>
+      '{inputFilepath: $inputFilepath, outputDirectory: $outputDirectory, filenamePrepend: $filenamePrepend, csvSettings: $csvSettings';
 }
