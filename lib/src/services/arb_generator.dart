@@ -3,10 +3,11 @@ import 'dart:io';
 
 import 'package:flappy_translator/src/services/file_writer/file_writer.dart';
 import 'package:flappy_translator/src/services/parsing/csv_parser.dart';
-import 'package:flappy_translator/src/services/validation/validator.dart';
+import 'package:flappy_translator/src/services/validation/validator.dart' as flappy;
 
 import '../models/arb/arb_file.dart';
 import '../models/settings/package_settings.dart';
+import 'validation/validator.dart';
 
 /// A service which generates arb files
 abstract class ARBGenerator {
@@ -16,7 +17,11 @@ abstract class ARBGenerator {
   ) {
     // check that the file exists
     final file = File(packageSettings.inputFilepath);
-    Validator.validateFile(file);
+    flappy.Validator.validateFile(file);
+
+    if (!Validator.validateCSVSettings(packageSettings.csvSettings)) {
+      exit(0);
+    }
 
     // File is valid, state progress
     print('Loading file ${packageSettings.inputFilepath}...');
@@ -28,7 +33,7 @@ abstract class ARBGenerator {
     );
 
     final supportedLanguages = parser.supportedLanguages;
-    Validator.validateSupportedLanguages(supportedLanguages);
+    flappy.Validator.validateSupportedLanguages(supportedLanguages);
 
     print('Locales $supportedLanguages determined.');
 
@@ -38,7 +43,7 @@ abstract class ARBGenerator {
     final encoder = JsonEncoder.withIndent('  ');
 
     for (final row in localizationsTable) {
-      Validator.validateLocalizationTableRow(
+      flappy.Validator.validateLocalizationTableRow(
         row,
         numberSupportedLanguages: supportedLanguages.length,
       );
