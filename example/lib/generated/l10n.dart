@@ -79,6 +79,19 @@ class AppLocalizations {
       args: [count],
     );
   }
+
+  /// `{sex, select, male{His book} female{Her book} other{Their book}}`
+  String whoseBook(String sex) {
+    return Intl.gender(
+      sex,
+      male: 'His book',
+      female: 'Her book',
+      other: 'Their book',
+      name: 'whoseBook',
+      desc: 'A message determine whose book it is',
+      args: [sex],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

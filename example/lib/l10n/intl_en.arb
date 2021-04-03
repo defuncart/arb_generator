@@ -11,5 +11,9 @@
   "numberMessages": "{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}}",
   "@numberMessages": {
     "description": "An info message about new messages count"
+  },
+  "whoseBook": "{sex, select, male{His book} female{Her book} other{Their book}}",
+  "@whoseBook": {
+    "description": "A message determine whose book it is"
   }
 }

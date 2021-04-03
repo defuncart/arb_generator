@@ -23,10 +23,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(firstName) => "Willkommen ${firstName}!";
 
+  static m2(sex) => "${Intl.gender(sex, female: 'Ihr Buch', male: 'Sein Buch', other: 'Ihr Buch')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "myKey" : MessageLookupByLibrary.simpleMessage("Hallo Welt!"),
     "numberMessages" : m0,
-    "welcome" : m1
+    "welcome" : m1,
+    "whoseBook" : m2
   };
 }
