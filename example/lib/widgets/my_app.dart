@@ -79,6 +79,10 @@ class HomeScreen extends StatelessWidget {
           Text(AppLocalizations.of(context).whoseBook('male')),
           Text(AppLocalizations.of(context).whoseBook('female')),
           Text(AppLocalizations.of(context).whoseBook('other')),
+          SizedBox(height: 8),
+          Text(AppLocalizations.of(context).unreadEmails(0, 'Dash')),
+          Text(AppLocalizations.of(context).unreadEmails(1, 'Dash')),
+          Text(AppLocalizations.of(context).unreadEmails(42, 'Dash')),
         ],
       ),
     );

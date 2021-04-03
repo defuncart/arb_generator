@@ -15,5 +15,9 @@
   "whoseBook": "{sex, select, male{His book} female{Her book} other{Their book}}",
   "@whoseBook": {
     "description": "A message determine whose book it is"
+  },
+  "unreadEmails": "{howMany, plural, zero{There are no unread emails for {userName}} one{There is 1 unread email for {userName}} other{There are {howMany} unread emails for {userName}}}",
+  "@unreadEmails": {
+    "description": "How many unread emails for user"
   }
 }

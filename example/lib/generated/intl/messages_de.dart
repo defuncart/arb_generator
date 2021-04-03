@@ -21,15 +21,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(count) => "${Intl.plural(count, zero: 'Du hast keine neue Nachrichten', one: 'Du hast eine neue Nachricht', other: 'Du hast ${count} neue Nachrichten')}";
 
-  static m1(firstName) => "Willkommen ${firstName}!";
+  static m1(howMany, userName) => "${Intl.plural(howMany, zero: 'Es gibt keine ungelesenen Emails für ${userName}', one: 'Es gibt eine ungelesene für ${userName}', other: 'Es gibt ${howMany} ungelesenen Emails für ${userName}')}";
 
-  static m2(sex) => "${Intl.gender(sex, female: 'Ihr Buch', male: 'Sein Buch', other: 'Ihr Buch')}";
+  static m2(firstName) => "Willkommen ${firstName}!";
+
+  static m3(sex) => "${Intl.gender(sex, female: 'Ihr Buch', male: 'Sein Buch', other: 'Ihr Buch')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "myKey" : MessageLookupByLibrary.simpleMessage("Hallo Welt!"),
     "numberMessages" : m0,
-    "welcome" : m1,
-    "whoseBook" : m2
+    "unreadEmails" : m1,
+    "welcome" : m2,
+    "whoseBook" : m3
   };
 }

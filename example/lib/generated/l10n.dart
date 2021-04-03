@@ -92,6 +92,19 @@ class AppLocalizations {
       args: [sex],
     );
   }
+
+  /// `{howMany, plural, zero{There are no unread emails for {userName}} one{There is 1 unread email for {userName}} other{There are {howMany} unread emails for {userName}}}`
+  String unreadEmails(num howMany, Object userName) {
+    return Intl.plural(
+      howMany,
+      zero: 'There are no unread emails for $userName',
+      one: 'There is 1 unread email for $userName',
+      other: 'There are $howMany unread emails for $userName',
+      name: 'unreadEmails',
+      desc: 'How many unread emails for user',
+      args: [howMany, userName],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
