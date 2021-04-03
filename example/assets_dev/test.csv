@@ -1,2 +1,3 @@
 keys;description;en;de
 myKey;The conventional newborn programmer greeting;Hello world!;Hallo Welt!
+welcome;A welcome message;Welcome {firstName}!;Willkommen {firstName}!
