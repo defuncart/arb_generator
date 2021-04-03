@@ -1,4 +1,4 @@
 {
-  "@@locale" : "de",
-  "helloWorld": "Hallo Welt!"
+	"@@locale": "de",
+	"myKey": "Hallo Welt!"
 }
