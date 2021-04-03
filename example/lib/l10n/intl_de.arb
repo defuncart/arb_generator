@@ -1,4 +1,7 @@
 {
   "@@locale": "de",
-  "myKey": "Hallo Welt!"
+  "myKey": "Hallo Welt!",
+  "@myKey": {
+    "description": "The conventional newborn programmer greeting"
+  }
 }
