@@ -5,20 +5,29 @@ class ARBFile {
   });
 
   final String locale;
-  final List<StandardMessage> messages;
+  final List<Message> messages;
 
   Map<String, dynamic> toJson() => {
         '@@locale': locale,
-        for (final message in messages) message.key: message.value,
+        for (final message in messages) ...message.toJson(),
       };
 }
 
-class StandardMessage {
-  const StandardMessage({
+class Message {
+  const Message({
     required this.key,
     required this.value,
+    this.description,
   });
 
   final String key;
   final String value;
+  final String? description;
+
+  Map<String, dynamic> toJson() => {
+        key: value,
+        '@$key': {
+          if (description != null) 'description': description,
+        }
+      };
 }

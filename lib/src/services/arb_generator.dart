@@ -3,10 +3,11 @@ import 'dart:io';
 
 import 'package:flappy_translator/src/services/file_writer/file_writer.dart';
 import 'package:flappy_translator/src/services/parsing/csv_parser.dart';
-import 'package:flappy_translator/src/services/validation/validator.dart';
+import 'package:flappy_translator/src/services/validation/validator.dart' as flappy;
 
 import '../models/arb/arb_file.dart';
 import '../models/settings/package_settings.dart';
+import 'validation/validator.dart';
 
 /// A service which generates arb files
 abstract class ARBGenerator {
@@ -16,19 +17,23 @@ abstract class ARBGenerator {
   ) {
     // check that the file exists
     final file = File(packageSettings.inputFilepath);
-    Validator.validateFile(file);
+    flappy.Validator.validateFile(file);
+
+    if (!Validator.validateCSVSettings(packageSettings.csvSettings)) {
+      exit(0);
+    }
 
     // File is valid, state progress
     print('Loading file ${packageSettings.inputFilepath}...');
 
     final parser = CSVParser(
       file: file,
-      startIndex: packageSettings.csvSettings.columnIndex,
+      startIndex: packageSettings.csvSettings.baseIndex,
       fieldDelimiter: packageSettings.csvSettings.delimiter,
     );
 
     final supportedLanguages = parser.supportedLanguages;
-    Validator.validateSupportedLanguages(supportedLanguages);
+    flappy.Validator.validateSupportedLanguages(supportedLanguages);
 
     print('Locales $supportedLanguages determined.');
 
@@ -38,7 +43,7 @@ abstract class ARBGenerator {
     final encoder = JsonEncoder.withIndent('  ');
 
     for (final row in localizationsTable) {
-      Validator.validateLocalizationTableRow(
+      flappy.Validator.validateLocalizationTableRow(
         row,
         numberSupportedLanguages: supportedLanguages.length,
       );
@@ -50,6 +55,9 @@ abstract class ARBGenerator {
         keys: parser.keys,
         values: parser.getValues(supportedLanguage),
         defaultValues: parser.defaultValues,
+        descriptions: packageSettings.csvSettings.descriptionIndex != null
+            ? parser.getColumn(packageSettings.csvSettings.descriptionIndex!)
+            : null,
       );
       final prettyContent = encoder.convert(content.toJson());
 
@@ -72,18 +80,20 @@ ARBFile _generateARBFile({
   required List<String> keys,
   required List<String> values,
   required List<String> defaultValues,
+  List<String>? descriptions,
 }) {
   if (keys.length != values.length && keys.length != defaultValues.length) {
     print('Error! Mismatch number of keys and values');
     exit(0);
   }
 
-  final messages = <StandardMessage>[];
+  final messages = <Message>[];
   for (var i = 0; i < keys.length; i++) {
     final value = i < values.length && values[i].isNotEmpty ? values[i] : defaultValues[i];
-    messages.add(StandardMessage(
+    messages.add(Message(
       key: keys[i],
       value: value,
+      description: descriptions?[i],
     ));
   }
 

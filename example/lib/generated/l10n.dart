@@ -52,7 +52,7 @@ class AppLocalizations {
     return Intl.message(
       'Hello world!',
       name: 'myKey',
-      desc: '',
+      desc: 'The conventional newborn programmer greeting',
       args: [],
     );
   }

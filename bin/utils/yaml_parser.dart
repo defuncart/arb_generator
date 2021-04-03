@@ -14,7 +14,8 @@ class YamlArguments {
 /// A class of arguments which the user can specify in pubspec.yaml for csv_settings object
 class YamlCSVArguments {
   static const delimiter = 'delimiter';
-  static const columnIndex = 'column_index';
+  static const descriptionIndex = 'description_index';
+  static const baseIndex = 'base_index';
 }
 
 /// A class which parses yaml
@@ -57,7 +58,8 @@ class YamlParser {
       final csvSettingsAsYamlMap = yamlMap[YamlArguments.csvSettings];
       return CSVSettings(
         delimiter: csvSettingsAsYamlMap[YamlCSVArguments.delimiter],
-        columnIndex: csvSettingsAsYamlMap[YamlCSVArguments.columnIndex],
+        descriptionIndex: csvSettingsAsYamlMap[YamlCSVArguments.descriptionIndex],
+        baseIndex: csvSettingsAsYamlMap[YamlCSVArguments.baseIndex],
       );
     }
 
