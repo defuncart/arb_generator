@@ -10,7 +10,10 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  csv: ^5.0.0
+  flappy_translator:
+    git:
+      url: https://github.com/smartnsoft/FlappyTranslator
+      ref: 695e75e811112feb21e11b63ef3023e29e701079
 
 dev_dependencies:
   test: ^1.16.8

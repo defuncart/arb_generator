@@ -47,12 +47,12 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  /// `Hello World!`
-  String get helloWorld {
+  /// `Hello world!`
+  String get myKey {
     return Intl.message(
-      'Hello World!',
-      name: 'helloWorld',
-      desc: 'The conventional newborn programmer greeting',
+      'Hello world!',
+      name: 'myKey',
+      desc: '',
       args: [],
     );
   }

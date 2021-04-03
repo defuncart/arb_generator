@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
         title: Text('ARB Generator'),
       ),
       body: Center(
-        child: Text(AppLocalizations.of(context).helloWorld),
+        child: Text(AppLocalizations.of(context).myKey),
       ),
     );
   }

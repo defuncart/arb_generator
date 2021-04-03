@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.0"
+  archive:
+    dependency: transitive
+    description:
+      name: archive
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.2"
   args:
     dependency: transitive
     description:
@@ -79,12 +86,33 @@ packages:
     source: hosted
     version: "3.0.0"
   csv:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: csv
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.0.0"
+  dart_style:
+    dependency: transitive
+    description:
+      name: dart_style
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
+  excel:
+    dependency: transitive
+    description:
+      name: excel
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0-null-safety"
   file:
     dependency: transitive
     description:
@@ -92,6 +120,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.0"
+  flappy_translator:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "695e75e811112feb21e11b63ef3023e29e701079"
+      resolved-ref: "695e75e811112feb21e11b63ef3023e29e701079"
+      url: "https://github.com/smartnsoft/FlappyTranslator"
+    source: git
+    version: "2.0.0-nullsafety.1"
   glob:
     dependency: transitive
     description:
@@ -183,6 +220,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.0"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.2"
   pool:
     dependency: transitive
     description:
@@ -330,6 +374,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.2"
   yaml:
     dependency: transitive
     description:
