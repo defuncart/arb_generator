@@ -23,7 +23,7 @@ abstract class ARBGenerator {
 
     final parser = CSVParser(
       file: file,
-      startIndex: packageSettings.csvSettings.columnIndex,
+      startIndex: packageSettings.csvSettings.baseIndex,
       fieldDelimiter: packageSettings.csvSettings.delimiter,
     );
 

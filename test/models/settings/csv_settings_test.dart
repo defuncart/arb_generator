@@ -6,12 +6,12 @@ void main() {
   test('When constructor params are null, expect defaults', () {
     final csvSettings = CSVSettings(
       delimiter: null,
-      columnIndex: null,
+      baseIndex: null,
     );
 
     expect(csvSettings.delimiter, CSVDefaultSettings.delimiter);
     expect(csvSettings.descriptionIndex, isNull);
-    expect(csvSettings.columnIndex, CSVDefaultSettings.columnIndex);
+    expect(csvSettings.baseIndex, CSVDefaultSettings.columnIndex);
   });
 
   test('withDefaultSettings, expect defaults', () {
@@ -19,19 +19,19 @@ void main() {
 
     expect(csvSettings.delimiter, CSVDefaultSettings.delimiter);
     expect(csvSettings.descriptionIndex, isNull);
-    expect(csvSettings.columnIndex, CSVDefaultSettings.columnIndex);
+    expect(csvSettings.baseIndex, CSVDefaultSettings.columnIndex);
   });
 
   test('When constructor params are non-null, expect given', () {
     final csvSettings = CSVSettings(
       delimiter: ',',
       descriptionIndex: 1,
-      columnIndex: 2,
+      baseIndex: 2,
     );
 
     expect(csvSettings.delimiter, ',');
     expect(csvSettings.descriptionIndex, 1);
-    expect(csvSettings.columnIndex, 2);
+    expect(csvSettings.baseIndex, 2);
   });
 
   test('Expect toString is overridden', () {

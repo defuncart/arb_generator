@@ -15,7 +15,7 @@ class YamlArguments {
 class YamlCSVArguments {
   static const delimiter = 'delimiter';
   static const descriptionIndex = 'description_index';
-  static const columnIndex = 'column_index';
+  static const baseIndex = 'base_index';
 }
 
 /// A class which parses yaml
@@ -59,7 +59,7 @@ class YamlParser {
       return CSVSettings(
         delimiter: csvSettingsAsYamlMap[YamlCSVArguments.delimiter],
         descriptionIndex: csvSettingsAsYamlMap[YamlCSVArguments.descriptionIndex],
-        columnIndex: csvSettingsAsYamlMap[YamlCSVArguments.columnIndex],
+        baseIndex: csvSettingsAsYamlMap[YamlCSVArguments.baseIndex],
       );
     }
 
