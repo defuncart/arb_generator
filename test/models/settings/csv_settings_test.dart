@@ -10,24 +10,32 @@ void main() {
     );
 
     expect(csvSettings.delimiter, CSVDefaultSettings.delimiter);
+    expect(csvSettings.descriptionIndex, isNull);
+    expect(csvSettings.columnIndex, CSVDefaultSettings.columnIndex);
+  });
+
+  test('withDefaultSettings, expect defaults', () {
+    final csvSettings = CSVSettings.withDefaultSettings();
+
+    expect(csvSettings.delimiter, CSVDefaultSettings.delimiter);
+    expect(csvSettings.descriptionIndex, isNull);
     expect(csvSettings.columnIndex, CSVDefaultSettings.columnIndex);
   });
 
   test('When constructor params are non-null, expect given', () {
     final csvSettings = CSVSettings(
       delimiter: ',',
-      columnIndex: 1,
+      descriptionIndex: 1,
+      columnIndex: 2,
     );
 
     expect(csvSettings.delimiter, ',');
-    expect(csvSettings.columnIndex, 1);
+    expect(csvSettings.descriptionIndex, 1);
+    expect(csvSettings.columnIndex, 2);
   });
 
   test('Expect toString is overridden', () {
-    final csvSettings = CSVSettings(
-      delimiter: null,
-      columnIndex: null,
-    );
+    final csvSettings = CSVSettings.withDefaultSettings();
 
     expect(csvSettings.toString(), isNot("Instance of 'CSVSettings'"));
   });
