@@ -1,4 +1,4 @@
-import 'package:arb_generator/src/configs/default_settings.dart';
+import 'package:arb_generator/src/configs/package_default_settings.dart';
 import 'package:arb_generator/src/models/settings/package_settings.dart';
 import 'package:test/test.dart';
 
@@ -12,8 +12,8 @@ void main() {
     );
 
     expect(packageSettings.inputFilepath, 'loca.csv');
-    expect(packageSettings.outputDirectory, DefaultSettings.outputDirectory);
-    expect(packageSettings.filenamePrepend, DefaultSettings.filenamePrepend);
+    expect(packageSettings.outputDirectory, PackageDefaultSettings.outputDirectory);
+    expect(packageSettings.filenamePrepend, PackageDefaultSettings.filenamePrepend);
     expect(packageSettings.csvSettings, isNotNull);
   });
 

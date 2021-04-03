@@ -1,4 +1,4 @@
-import '../../configs/default_settings.dart';
+import '../../configs/package_default_settings.dart';
 import 'csv_settings.dart';
 
 /// A model representing package settings
@@ -21,8 +21,8 @@ class PackageSettings {
     required String? outputDirectory,
     required String? filenamePrepend,
     CSVSettings? csvSettings,
-  })  : outputDirectory = outputDirectory ?? DefaultSettings.outputDirectory,
-        filenamePrepend = filenamePrepend ?? DefaultSettings.filenamePrepend,
+  })  : outputDirectory = outputDirectory ?? PackageDefaultSettings.outputDirectory,
+        filenamePrepend = filenamePrepend ?? PackageDefaultSettings.filenamePrepend,
         csvSettings = csvSettings ?? CSVSettings.withDefaultSettings();
 
   /// Returns a String representation of the model.

@@ -1,5 +1,5 @@
 /// A config of default settings for the package
-abstract class DefaultSettings {
+abstract class PackageDefaultSettings {
   /// A directory for the generated files
   static const outputDirectory = 'lib/l10n';
 
