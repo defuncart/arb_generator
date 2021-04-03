@@ -3,5 +3,9 @@
   "myKey": "Hallo Welt!",
   "@myKey": {
     "description": "The conventional newborn programmer greeting"
+  },
+  "welcome": "Willkommen {firstName}!",
+  "@welcome": {
+    "description": "A welcome message"
   }
 }

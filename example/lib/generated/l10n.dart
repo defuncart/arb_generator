@@ -56,6 +56,16 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Welcome {firstName}!`
+  String welcome(Object firstName) {
+    return Intl.message(
+      'Welcome $firstName!',
+      name: 'welcome',
+      desc: 'A welcome message',
+      args: [firstName],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -19,8 +19,11 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(firstName) => "Welcome ${firstName}!";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "myKey" : MessageLookupByLibrary.simpleMessage("Hello world!")
+    "myKey" : MessageLookupByLibrary.simpleMessage("Hello world!"),
+    "welcome" : m0
   };
 }
