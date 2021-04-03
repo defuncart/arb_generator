@@ -124,8 +124,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: "4acf57fd676c7850e4a9a8ea88e0a9c3deaf262d"
+      ref: "695e75e811112feb21e11b63ef3023e29e701079"
+      resolved-ref: "695e75e811112feb21e11b63ef3023e29e701079"
       url: "https://github.com/smartnsoft/FlappyTranslator"
     source: git
     version: "2.0.0-nullsafety.1"

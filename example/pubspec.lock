@@ -106,6 +106,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  dart_style:
+    dependency: transitive
+    description:
+      name: dart_style
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
+  excel:
+    dependency: transitive
+    description:
+      name: excel
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0-null-safety"
   file:
     dependency: transitive
     description:
@@ -113,6 +134,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.0"
+  flappy_translator:
+    dependency: transitive
+    description:
+      path: "."
+      ref: "695e75e811112feb21e11b63ef3023e29e701079"
+      resolved-ref: "695e75e811112feb21e11b63ef3023e29e701079"
+      url: "https://github.com/smartnsoft/FlappyTranslator"
+    source: git
+    version: "2.0.0-nullsafety.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -247,6 +277,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.2"
   yaml:
     dependency: transitive
     description:
