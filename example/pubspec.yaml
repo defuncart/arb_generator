@@ -36,4 +36,4 @@ arb_generator:
   filename_prepend: "intl_"
   csv_settings:
     delimiter: ";"
-    column_index: 1
+    column_index: 2
