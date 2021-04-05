@@ -56,6 +56,71 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Welcome {firstName}!`
+  String welcome(Object firstName) {
+    return Intl.message(
+      'Welcome $firstName!',
+      name: 'welcome',
+      desc: 'A welcome message',
+      args: [firstName],
+    );
+  }
+
+  /// `{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}}`
+  String numberMessages(num count) {
+    return Intl.plural(
+      count,
+      zero: 'You have no new messages',
+      one: 'You have 1 new message',
+      other: 'You have $count new messages',
+      name: 'numberMessages',
+      desc: 'An info message about new messages count',
+      args: [count],
+    );
+  }
+
+  /// `{sex, select, male{His book} female{Her book} other{Their book}}`
+  String whoseBook(String sex) {
+    return Intl.gender(
+      sex,
+      male: 'His book',
+      female: 'Her book',
+      other: 'Their book',
+      name: 'whoseBook',
+      desc: 'A message determine whose book it is',
+      args: [sex],
+    );
+  }
+
+  /// `{howMany, plural, zero{There are no unread emails for {userName}} one{There is 1 unread email for {userName}} other{There are {howMany} unread emails for {userName}}}`
+  String unreadEmails(num howMany, Object userName) {
+    return Intl.plural(
+      howMany,
+      zero: 'There are no unread emails for $userName',
+      one: 'There is 1 unread email for $userName',
+      other: 'There are $howMany unread emails for $userName',
+      name: 'unreadEmails',
+      desc: 'How many unread emails for user',
+      args: [howMany, userName],
+    );
+  }
+
+  /// `{weatherType, select, sunny{Woohoo} cloudy{Meh} rainy{Weeh} other{Other}}`
+  String weatherReaction(Object weatherType) {
+    return Intl.select(
+      weatherType,
+      {
+        'sunny': 'Woohoo',
+        'cloudy': 'Meh',
+        'rainy': 'Weeh',
+        'other': 'Other',
+      },
+      name: 'weatherReaction',
+      desc: 'Reaction to types of weather',
+      args: [weatherType],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

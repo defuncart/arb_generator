@@ -19,8 +19,23 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
+  static m0(count) => "${Intl.plural(count, zero: 'Du hast keine neue Nachrichten', one: 'Du hast eine neue Nachricht', other: 'Du hast ${count} neue Nachrichten')}";
+
+  static m1(howMany, userName) => "${Intl.plural(howMany, zero: 'Es gibt keine ungelesenen Emails für ${userName}', one: 'Es gibt eine ungelesene für ${userName}', other: 'Es gibt ${howMany} ungelesenen Emails für ${userName}')}";
+
+  static m2(weatherType) => "${Intl.select(weatherType, {'sunny': 'Prima', 'cloudy': 'In Ordnung', 'rainy': 'Mist', 'other': 'Other', })}";
+
+  static m3(firstName) => "Willkommen ${firstName}!";
+
+  static m4(sex) => "${Intl.gender(sex, female: 'Ihr Buch', male: 'Sein Buch', other: 'Ihr Buch')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "myKey" : MessageLookupByLibrary.simpleMessage("Hallo Welt!")
+    "myKey" : MessageLookupByLibrary.simpleMessage("Hallo Welt!"),
+    "numberMessages" : m0,
+    "unreadEmails" : m1,
+    "weatherReaction" : m2,
+    "welcome" : m3,
+    "whoseBook" : m4
   };
 }

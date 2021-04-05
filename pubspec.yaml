@@ -13,7 +13,6 @@ dependencies:
   flappy_translator:
     git:
       url: https://github.com/smartnsoft/FlappyTranslator
-      ref: 695e75e811112feb21e11b63ef3023e29e701079
 
 dev_dependencies:
   test: ^1.16.8
