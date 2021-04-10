@@ -1,3 +1,4 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - 10/04/2021
 
-* TODO: Describe initial release.
+* Initial alpha version
+* Generates ARB files from a CSV file

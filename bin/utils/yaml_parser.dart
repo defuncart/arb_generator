@@ -1,6 +1,7 @@
 import 'dart:io';
 
-import 'package:arb_generator/arb_generator.dart' show CSVSettings, PackageSettings;
+import 'package:arb_generator/arb_generator.dart'
+    show CSVSettings, PackageSettings;
 import 'package:yaml/yaml.dart';
 
 /// A class of arguments which the user can specify in pubspec.yaml
@@ -58,7 +59,8 @@ class YamlParser {
       final csvSettingsAsYamlMap = yamlMap[YamlArguments.csvSettings];
       return CSVSettings(
         delimiter: csvSettingsAsYamlMap[YamlCSVArguments.delimiter],
-        descriptionIndex: csvSettingsAsYamlMap[YamlCSVArguments.descriptionIndex],
+        descriptionIndex:
+            csvSettingsAsYamlMap[YamlCSVArguments.descriptionIndex],
         baseIndex: csvSettingsAsYamlMap[YamlCSVArguments.baseIndex],
       );
     }

@@ -3,7 +3,8 @@ import 'dart:io';
 
 import 'package:flappy_translator/src/services/file_writer/file_writer.dart';
 import 'package:flappy_translator/src/services/parsing/csv_parser.dart';
-import 'package:flappy_translator/src/services/validation/validator.dart' as flappy;
+import 'package:flappy_translator/src/services/validation/validator.dart'
+    as flappy;
 
 import '../models/arb/arb_file.dart';
 import '../models/settings/package_settings.dart';
@@ -62,7 +63,8 @@ abstract class ARBGenerator {
       final prettyContent = encoder.convert(content.toJson());
 
       // write output file
-      final path = '${packageSettings.outputDirectory}/${packageSettings.filenamePrepend}$supportedLanguage.arb';
+      final path =
+          '${packageSettings.outputDirectory}/${packageSettings.filenamePrepend}$supportedLanguage.arb';
       FileWriter().write(
         contents: prettyContent,
         path: path,
@@ -89,7 +91,9 @@ ARBFile _generateARBFile({
 
   final messages = <Message>[];
   for (var i = 0; i < keys.length; i++) {
-    final value = i < values.length && values[i].isNotEmpty ? values[i] : defaultValues[i];
+    final value = i < values.length && values[i].isNotEmpty
+        ? values[i]
+        : defaultValues[i];
     messages.add(Message(
       key: keys[i],
       value: value,

@@ -28,5 +28,6 @@ class CSVSettings {
 
   /// Returns a String representation of the model.
   @override
-  String toString() => '{delimiter: $delimiter, descriptionIndex: $descriptionIndex, baseIndex: $baseIndex}';
+  String toString() =>
+      '{delimiter: $delimiter, descriptionIndex: $descriptionIndex, baseIndex: $baseIndex}';
 }
