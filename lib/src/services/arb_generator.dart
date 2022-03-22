@@ -62,7 +62,9 @@ abstract class ARBGenerator {
             ? parser.getColumn(packageSettings.csvSettings.descriptionIndex!)
             : null,
       );
-      final prettyContent = encoder.convert(content.toJson());
+      var prettyContent = encoder.convert(content.toJson());
+      // convert turns \n into \\n
+      prettyContent = prettyContent.replaceAll('\\\\', '\\');
 
       // write output file
       final path =
