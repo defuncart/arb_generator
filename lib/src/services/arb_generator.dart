@@ -54,7 +54,7 @@ abstract class ARBGenerator {
 
     for (final supportedLanguage in supportedLanguages) {
       final content = _generateARBFile(
-        langauge: supportedLanguage,
+        language: supportedLanguage,
         keys: parser.keys,
         values: parser.getValues(supportedLanguage),
         defaultValues: parser.defaultValues,
@@ -80,7 +80,7 @@ abstract class ARBGenerator {
 }
 
 ARBFile _generateARBFile({
-  required String langauge,
+  required String language,
   required List<String> keys,
   required List<String> values,
   required List<String> defaultValues,
@@ -103,5 +103,5 @@ ARBFile _generateARBFile({
     ));
   }
 
-  return ARBFile(locale: langauge, messages: messages);
+  return ARBFile(locale: language, messages: messages);
 }
