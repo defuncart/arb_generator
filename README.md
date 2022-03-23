@@ -37,7 +37,7 @@ is generated into the following ARB file
 }
 ```
 
-This ARB file can then be converted into localization delegates using, for instance, [intl_utils](https://pub.dev/packages/intl_utils).
+This ARB file can then be converted into localization delegates using [intl](https://docs.flutter.dev/development/accessibility-and-localization/internationalization#adding-your-own-localized-messages) or [intl_utils](https://pub.dev/packages/intl_utils).
 
 ### Add dependency
 
@@ -79,17 +79,17 @@ arb_generator:
 Ensure that your current working directory is the project root. Depending on your project, run one of the following commands:
 
 ```sh
-dart run flutter_pseudolocalizor
+dart run arb_generator
 ```
 
 or
 
 ```sh
-flutter pub run flutter_pseudolocalizor
+flutter pub run arb_generator
 ```
 
 ARB files are then generated in `output_dir`.
 
 ## Collaboration
 
-Spotted any issues? Please open [an issue on GitHub](https://github.com/defuncart/flutter_pseudolocalizor/issues)! Would like to contribute a new language or feature? Fork the repo and submit a PR!
+Spotted any issues? Please open [an issue on GitHub](https://github.com/defuncart/arb_generator/issues)! Would like to contribute a new language or feature? Fork the repo and submit a PR!
