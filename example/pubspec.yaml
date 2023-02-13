@@ -33,7 +33,7 @@ flutter_intl:
 
 arb_generator:
   input_filepath: "assets_dev/test.csv"
-  output_filepath: "lib/l10n"
+  output_directory: "lib/l10n"
   filename_prepend: "intl_"
   csv_settings:
     delimiter: ";"
