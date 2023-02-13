@@ -57,7 +57,7 @@ Next define arb_generator package settings in `pubspec.yaml`. Note that `input_f
 ```yaml
 arb_generator:
   input_filepath: "assets_dev/test.csv"
-  output_filepath: "lib/l10n"
+  output_directory: "lib/l10n"
   filename_prepend: "intl_"
   csv_settings:
     delimiter: ";"
@@ -68,7 +68,7 @@ arb_generator:
 | Setting                         | Description                                                                   |
 | ------------------------------- | ------------------------------------------------------------------------------|
 | input_filepath                  | Required. A path to the input CSV file.                                       |
-| output_dir                      | A directory to generate the output ARB file(s). Defaults to `lib/l10`         |
+| output_directory                | A directory to generate the output ARB file(s). Defaults to `lib/l10`         |
 | filename_prepend                | Text to prepend to filename of generated files. Fefaults to empty string.     |
 | csv_settings: delimiter         | A delimiter to separate columns in the input CSV file. Defaults to `,`.       |
 | csv_settings: description_index | The description column index. Defaults to `null`.                             |
