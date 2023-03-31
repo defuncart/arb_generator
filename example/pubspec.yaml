@@ -1,11 +1,11 @@
 name: example
 description: An example for arb_generator.
 publish_to: 'none'
-version: 0.0.2
+version: 0.0.3
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=2.0.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -16,6 +16,7 @@ dependencies:
   intl: ^0.17.0
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   intl_utils: ^2.1.0
   arb_generator:
     path: ../

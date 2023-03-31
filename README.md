@@ -48,8 +48,6 @@ dev_dependencies:
   arb_generator:
 ```
 
-Note that arb_generator requires dart sdk >= 2.12.
-
 ### Define Settings
 
 Next define arb_generator package settings in `pubspec.yaml`. Note that `input_filepath` is the only required parameter.
