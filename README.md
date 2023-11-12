@@ -80,8 +80,8 @@ Ensure that your current working directory is the project root and run the follo
 dart run arb_generator
 ```
 
-ARB files are then generated in `output_dir`.
+ARB files are then generated in `output_directory`.
 
 ## Collaboration
 
-Spotted any issues? Please open [an issue on GitHub](https://github.com/defuncart/arb_generator/issues)! Would like to contribute a new language or feature? Fork the repo and submit a PR!
+Spotted any issues? Please open [an issue on GitHub](https://github.com/defuncart/arb_generator/issues)! Would like to contribute a new feature? Fork the repo and submit a PR!
