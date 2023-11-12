@@ -37,7 +37,7 @@ is generated into the following ARB file
 }
 ```
 
-This ARB file can then be converted into localization delegates using [intl](https://docs.flutter.dev/development/accessibility-and-localization/internationalization#adding-your-own-localized-messages) or [intl_utils](https://pub.dev/packages/intl_utils).
+This ARB file can then be converted into localization delegates using [intl](https://docs.flutter.dev/development/accessibility-and-localization/internationalization) or [intl_utils](https://pub.dev/packages/intl_utils).
 
 ### Add dependency
 
@@ -74,16 +74,10 @@ arb_generator:
 
 ### Run package
 
-Ensure that your current working directory is the project root. Depending on your project, run one of the following commands:
+Ensure that your current working directory is the project root and run the following command:
 
 ```sh
 dart run arb_generator
-```
-
-or
-
-```sh
-flutter pub run arb_generator
 ```
 
 ARB files are then generated in `output_dir`.
