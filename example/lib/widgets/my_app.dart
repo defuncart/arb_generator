@@ -43,7 +43,8 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   for (final locale in AppLocalizations.supportedLocales) ...[
                     ElevatedButton(
-                      onPressed: () => setState(() => _locale = locale.toString()),
+                      onPressed: () =>
+                          setState(() => _locale = locale.toString()),
                       child: Text(locale.toString()),
                     ),
                     const SizedBox(width: 8),
