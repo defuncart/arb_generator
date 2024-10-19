@@ -4,19 +4,19 @@ publish_to: 'none'
 version: 0.0.3
 
 environment:
-  sdk: ">=3.1.0 <4.0.0"
-  flutter: ">=3.13.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter 
-  cupertino_icons: ^1.0.2
+  cupertino_icons:
   intl:
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.0
   arb_generator:
     path: ../
 
