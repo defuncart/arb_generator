@@ -1,6 +1,6 @@
 name: arb_generator
 description: A dart tool which generates ARB files from CSV files.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/defuncart/arb_generator
 repository: https://github.com/defuncart/arb_generator
 issue_tracker: https://github.com/defuncart/arb_generator/issues
@@ -9,6 +9,7 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
+  meta: ^1.8.0
   yaml: ^3.1.0
   csv: ^5.0.0
 
