@@ -89,14 +89,12 @@ ARBFile _generateARBFile({
   }
 
   final messages = <Message>[];
-  for (var i = 0; i < keys.length; i++) {
-    final value = i < values.length && values[i].isNotEmpty
-        ? values[i]
-        : defaultValues[i];
+  for (final (index, value) in values.indexed) {
+    final effectiveValue = value.isEmpty ? defaultValues[index] : value;
     messages.add(Message(
-      key: keys[i],
-      value: value,
-      description: descriptions?[i],
+      key: keys[index],
+      value: effectiveValue,
+      description: descriptions?[index],
     ));
   }
 
