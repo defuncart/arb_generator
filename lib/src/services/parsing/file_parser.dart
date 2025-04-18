@@ -86,7 +86,8 @@ abstract class FileParser {
   }
 
   /// Returns all localizations values for the default language
-  List<String> get defaultValues => getColumn(startIndex);
+  List<String> get defaultValues =>
+      localizationsTable.map((e) => e.defaultWord).toList();
 }
 
 /// A model representing a row in a [LocalizationTable]
