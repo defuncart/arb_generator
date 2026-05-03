@@ -108,7 +108,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Welcome {firstName}!'**
-  String welcome(Object firstName);
+  String welcome(String firstName);
 
   /// An info message about new messages count
   ///

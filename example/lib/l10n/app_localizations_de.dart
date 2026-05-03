@@ -12,7 +12,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get myKey => 'Hallo Welt!';
 
   @override
-  String welcome(Object firstName) {
+  String welcome(String firstName) {
     return 'Willkommen $firstName!';
   }
 
