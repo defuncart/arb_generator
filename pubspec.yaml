@@ -12,6 +12,7 @@ dependencies:
   meta: ^1.16.0
   yaml: ^3.1.2
   csv: ^6.0.0
+  path: ^1.9.0
 
 dev_dependencies:
   test: ^1.25.5

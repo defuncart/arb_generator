@@ -18,16 +18,19 @@ class Message {
     required this.key,
     required this.value,
     this.description,
+    this.metadata,
   });
 
   final String key;
   final String value;
   final String? description;
+  final Map<String, dynamic>? metadata;
 
   Map<String, dynamic> toJson() => {
     key: value,
     '@$key': {
-      if (description != null) 'description': description,
+      'description': ?description,
+      ...?metadata,
     },
   };
 }
