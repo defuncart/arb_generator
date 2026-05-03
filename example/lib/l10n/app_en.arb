@@ -16,7 +16,13 @@
   },
   "numberMessages": "{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}}",
   "@numberMessages": {
-    "description": "An info message about new messages count"
+    "description": "An info message about new messages count",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
   },
   "whoseBook": "{sex, select, male{His book} female{Her book} other{Their book}}",
   "@whoseBook": {
@@ -24,7 +30,17 @@
   },
   "unreadEmails": "{howMany, plural, zero{There are no unread emails for {userName}} one{There is 1 unread email for {userName}} other{There are {howMany} unread emails for {userName}}}",
   "@unreadEmails": {
-    "description": "How many unread emails for user"
+    "description": "How many unread emails for user",
+    "placeholders": {
+      "howMany": {
+        "type": "int",
+        "example": "1"
+      },
+      "userName": {
+        "type": "String",
+        "example": "dash"
+      }
+    }
   },
   "weatherReaction": "{weatherType, select, sunny{Woohoo} cloudy{Meh} rainy{Weeh} other{Other}}",
   "@weatherReaction": {
