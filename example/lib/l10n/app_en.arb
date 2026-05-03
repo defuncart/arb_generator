@@ -6,7 +6,12 @@
   },
   "welcome": "Welcome {firstName}!",
   "@welcome": {
-    "description": "A welcome message"
+    "description": "A welcome message",
+    "placeholders": {
+      "firstName": {
+        "type": "String"
+      }
+    }
   },
   "numberMessages": "{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}}",
   "@numberMessages": {

@@ -1,0 +1,9 @@
+{
+    "@welcome": {
+        "placeholders": {
+            "firstName": {
+                "type": "String"
+            }
+        }
+    }
+}
