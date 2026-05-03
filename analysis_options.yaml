@@ -2,3 +2,6 @@ include: package:lints/recommended.yaml
 
 analyzer:
   exclude: [example/**]
+formatter:
+  page_width: 80
+  trailing_commas: preserve

@@ -4,8 +4,8 @@ publish_to: 'none'
 version: 0.0.4
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.10.0 <4.0.0"
+  sdk: ^3.8.0
+  flutter: ^3.32.0
 
 dependencies:
   flutter:
@@ -16,7 +16,7 @@ dependencies:
   intl:
 
 dev_dependencies:
-  flutter_lints: ^3.0.0
+  flutter_lints:
   arb_generator:
     path: ../
 
