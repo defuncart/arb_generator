@@ -10,43 +10,38 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late String _locale;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _locale = 'en';
-  }
+  var _locale = Locale('en');
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale(_locale),
+      locale: _locale,
       home: Scaffold(
         appBar: AppBar(title: const Text('arb_generator')),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (final locale in AppLocalizations.supportedLocales) ...[
-                    ElevatedButton(
-                      onPressed: () =>
-                          setState(() => _locale = locale.toString()),
-                      child: Text(locale.toString()),
-                    ),
-                    const SizedBox(width: 8),
-                  ],
-                ],
-              ),
-              const SizedBox(height: 8),
-              const HomeScreen(),
-            ],
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              spacing: 8,
+              children: [
+                SegmentedButton(
+                  segments: AppLocalizations.supportedLocales
+                      .map(
+                        (locale) => ButtonSegment(
+                          value: locale,
+                          label: Text(locale.toString()),
+                        ),
+                      )
+                      .toList(),
+                  selected: {_locale},
+                  onSelectionChanged: (newSelection) =>
+                      setState(() => _locale = newSelection.first),
+                ),
+                const HomeScreen(),
+              ],
+            ),
           ),
         ),
       ),
