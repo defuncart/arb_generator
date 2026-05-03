@@ -82,6 +82,55 @@ dart run arb_generator
 
 ARB files are then generated in `output_directory`.
 
+## Flutter Localizations
+
+See [example](example/l10n.yml) and follow the [official documentation](https://docs.flutter.dev/ui/internationalization#adding-your-own-localized-messages) to generate localization delegates from the arb files.
+
+## Optional Metadata
+
+By default, if a description is given, it is added as metadata in the arb file:
+
+```
+"welcome": "Welcome {firstName}!",
+"@welcome": {
+  "description": "A welcome message",
+}
+```
+
+Optional metadata can be supplied by adding a `json` file with the same filename as the csv file:
+
+```
+{
+  "@welcome": {
+    "placeholders": {
+      "firstName": {
+        "type": "String",
+        "example": "Dash"
+      }
+    }
+  }
+}
+```
+
+This metadata will then copied into the generated file:
+
+```
+"welcome": "Welcome {firstName}!",
+"@welcome": {
+  "description": "A welcome message",
+  "placeholders": {
+    "firstName": {
+      "type": "String",
+      "example": "Dash"
+    }
+  }
+}
+```
+
+Now the generated delegates will expect `firstName` to be of type `String` not `Object`.
+
+See [example/assets_dev/test.json](example/assets_dev/test.json) for more info.
+
 ## Collaboration
 
 Spotted any issues? Please open [an issue on GitHub](https://github.com/defuncart/arb_generator/issues)! Would like to contribute a new feature? Fork the repo and submit a PR!
