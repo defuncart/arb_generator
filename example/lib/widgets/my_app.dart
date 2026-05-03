@@ -31,9 +31,7 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(_locale),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('arb_generator'),
-        ),
+        appBar: AppBar(title: const Text('arb_generator')),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -48,7 +46,7 @@ class _MyAppState extends State<MyApp> {
                       child: Text(locale.toString()),
                     ),
                     const SizedBox(width: 8),
-                  ]
+                  ],
                 ],
               ),
               const SizedBox(height: 8),
@@ -62,9 +60,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    Key? key,
-  }) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

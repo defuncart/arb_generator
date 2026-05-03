@@ -8,8 +8,10 @@ import '../../testing_utils.dart';
 void main() {
   late FileParser parser;
 
-  setUp(() =>
-      parser = _MockFileParser(file: File('example/test.csv'), startIndex: 1));
+  setUp(
+    () =>
+        parser = _MockFileParser(file: File('example/test.csv'), startIndex: 1),
+  );
 
   test('Parameter startIndex <= 0 triggers assertion', () {
     expect(
@@ -88,24 +90,27 @@ void main() {
 
   test('LocalizationTableRow equatability', () {
     final row1 = LocalizationTableRow(
-        key: 'myKey',
-        defaultWord: 'a',
-        words: ['a', 'b'],
-        raw: ['myKey', 'a', 'b']);
+      key: 'myKey',
+      defaultWord: 'a',
+      words: ['a', 'b'],
+      raw: ['myKey', 'a', 'b'],
+    );
     final row2 = LocalizationTableRow(
-        key: 'myKey',
-        defaultWord: 'a',
-        words: ['a', 'b'],
-        raw: ['myKey', 'a', 'b']);
+      key: 'myKey',
+      defaultWord: 'a',
+      words: ['a', 'b'],
+      raw: ['myKey', 'a', 'b'],
+    );
     expect(row1 == row2, isTrue);
   });
 
   test('LocalizationTableRow.toString', () {
     final row = LocalizationTableRow(
-        key: 'myKey',
-        defaultWord: 'a',
-        words: ['a', 'b'],
-        raw: ['myKey', 'a', 'b']);
+      key: 'myKey',
+      defaultWord: 'a',
+      words: ['a', 'b'],
+      raw: ['myKey', 'a', 'b'],
+    );
     expect(
       row.toString(),
       isNot('Instance of \'LocalizationTableRow\''),

@@ -20,8 +20,8 @@ class CSVSettings {
     required String? delimiter,
     required int? baseIndex,
     this.descriptionIndex,
-  })  : delimiter = delimiter ?? CSVDefaultSettings.delimiter,
-        baseIndex = baseIndex ?? CSVDefaultSettings.columnIndex;
+  }) : delimiter = delimiter ?? CSVDefaultSettings.delimiter,
+       baseIndex = baseIndex ?? CSVDefaultSettings.columnIndex;
 
   /// Consts a new instance of `CSVSettings` whose parameters are given default values.
   CSVSettings.withDefaultSettings() : this(delimiter: null, baseIndex: null);

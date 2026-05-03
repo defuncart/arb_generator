@@ -31,14 +31,16 @@ abstract class Validator {
     for (final supportedLanguage in supportedLanguages) {
       if (!supportedLanguage.isValidLocale) {
         print(
-            '$supportedLanguage isn\'t a valid locale. Expected locale of the form "en" or "en_US".');
+          '$supportedLanguage isn\'t a valid locale. Expected locale of the form "en" or "en_US".',
+        );
       }
 
       final languageCode = supportedLanguage.split('_').first;
       if (!constants.flutterLocalizedLanguages.contains(languageCode)) {
         print('$languageCode isn\'t supported by default in Flutter.');
         print(
-            'Please see https://flutter.dev/docs/development/accessibility-and-localization/internationalization#adding-support-for-a-new-language for info on how to add required classes.');
+          'Please see https://flutter.dev/docs/development/accessibility-and-localization/internationalization#adding-support-for-a-new-language for info on how to add required classes.',
+        );
       }
     }
   }
@@ -47,7 +49,8 @@ abstract class Validator {
   ///
   /// If any error occurs, process is terminated
   static void validateLocalizationsTable(
-      List<LocalizationTableRow> localizationsTable) {
+    List<LocalizationTableRow> localizationsTable,
+  ) {
     if (localizationsTable.isEmpty) {
       print('No keys found.');
     }
@@ -63,29 +66,34 @@ abstract class Validator {
     final key = row.key;
     if (constants.reservedWords.contains(key)) {
       print(
-          'Key $key in row ${row.raw} is a reserved keyword in Dart and is thus invalid.');
+        'Key $key in row ${row.raw} is a reserved keyword in Dart and is thus invalid.',
+      );
     }
 
     if (constants.types.contains(key)) {
       print(
-          'Key $key in row ${row.raw} is a type in Dart and is thus invalid.');
+        'Key $key in row ${row.raw} is a type in Dart and is thus invalid.',
+      );
     }
 
     if (!key.isValidVariableName) {
       print(
-          'Key $key in row ${row.raw} is invalid. Expected key in the form lowerCamelCase.');
+        'Key $key in row ${row.raw} is invalid. Expected key in the form lowerCamelCase.',
+      );
     }
 
     final words = row.words;
     if (words.length > numberSupportedLanguages) {
       print(
-          'The row ${row.raw} does not seem to be well formatted. Found ${words.length} values for numberSupportedLanguages locales.');
+        'The row ${row.raw} does not seem to be well formatted. Found ${words.length} values for numberSupportedLanguages locales.',
+      );
     }
 
     final defaultWord = row.defaultWord;
     if (defaultWord.isEmpty) {
       print(
-          'Key $key in row ${row.raw} has no translation for default language.');
+        'Key $key in row ${row.raw} has no translation for default language.',
+      );
     }
   }
 
@@ -95,21 +103,24 @@ abstract class Validator {
   static bool validateCSVSettings(CSVSettings csvSettings) {
     if (csvSettings.baseIndex < 1) {
       print(
-          'Error! baseIndex = ${csvSettings.baseIndex} is not valid. Expected > 0');
+        'Error! baseIndex = ${csvSettings.baseIndex} is not valid. Expected > 0',
+      );
       return false;
     }
 
     if (csvSettings.descriptionIndex != null &&
         csvSettings.descriptionIndex! < 1) {
       print(
-          'Error! descriptionIndex = ${csvSettings.descriptionIndex} is not valid. Expected > 0');
+        'Error! descriptionIndex = ${csvSettings.descriptionIndex} is not valid. Expected > 0',
+      );
       return false;
     }
 
     if (csvSettings.descriptionIndex != null &&
         csvSettings.descriptionIndex! >= csvSettings.baseIndex) {
       print(
-          'Error! baseIndex = ${csvSettings.baseIndex} and descriptionIndex = ${csvSettings.descriptionIndex} are not valid. Expected descriptionIndex < baseIndex');
+        'Error! baseIndex = ${csvSettings.baseIndex} and descriptionIndex = ${csvSettings.descriptionIndex} are not valid. Expected descriptionIndex < baseIndex',
+      );
       return false;
     }
 
