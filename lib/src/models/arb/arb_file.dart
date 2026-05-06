@@ -8,9 +8,9 @@ class ARBFile {
   final List<Message> messages;
 
   Map<String, dynamic> toJson() => {
-        '@@locale': locale,
-        for (final message in messages) ...message.toJson(),
-      };
+    '@@locale': locale,
+    for (final message in messages) ...message.toJson(),
+  };
 }
 
 class Message {
@@ -25,9 +25,9 @@ class Message {
   final String? description;
 
   Map<String, dynamic> toJson() => {
-        key: value,
-        '@$key': {
-          if (description != null) 'description': description,
-        }
-      };
+    key: value,
+    '@$key': {
+      if (description != null) 'description': description,
+    },
+  };
 }

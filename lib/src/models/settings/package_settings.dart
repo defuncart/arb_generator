@@ -21,11 +21,11 @@ class PackageSettings {
     required String? outputDirectory,
     required String? filenamePrepend,
     CSVSettings? csvSettings,
-  })  : outputDirectory =
-            outputDirectory ?? PackageDefaultSettings.outputDirectory,
-        filenamePrepend =
-            filenamePrepend ?? PackageDefaultSettings.filenamePrepend,
-        csvSettings = csvSettings ?? CSVSettings.withDefaultSettings();
+  }) : outputDirectory =
+           outputDirectory ?? PackageDefaultSettings.outputDirectory,
+       filenamePrepend =
+           filenamePrepend ?? PackageDefaultSettings.filenamePrepend,
+       csvSettings = csvSettings ?? CSVSettings.withDefaultSettings();
 
   /// Returns a String representation of the model.
   @override

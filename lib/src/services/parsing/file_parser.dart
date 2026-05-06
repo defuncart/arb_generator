@@ -56,7 +56,8 @@ abstract class FileParser {
           (row) => LocalizationTableRow(
             key: row.first,
             // if there is not a default word, use key
-            defaultWord: row.sublist(startIndex).isNotEmpty &&
+            defaultWord:
+                row.sublist(startIndex).isNotEmpty &&
                     row.sublist(startIndex).first.isNotEmpty
                 ? row.sublist(startIndex).first
                 : row.first,

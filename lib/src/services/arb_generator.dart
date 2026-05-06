@@ -93,11 +93,13 @@ ARBFile _generateARBFile({
     final value = i < values.length && values[i].isNotEmpty
         ? values[i]
         : defaultValues[i];
-    messages.add(Message(
-      key: keys[i],
-      value: value,
-      description: descriptions?[i],
-    ));
+    messages.add(
+      Message(
+        key: keys[i],
+        value: value,
+        description: descriptions?[i],
+      ),
+    );
   }
 
   return ARBFile(locale: language, messages: messages);

@@ -1,3 +1,7 @@
+## [0.1.0] - 
+
+* Set Dart 3.8 as minimum constraint
+
 ## [0.0.4] - 20/10/2024
 
 * Set Dart 3 as minimum constraint

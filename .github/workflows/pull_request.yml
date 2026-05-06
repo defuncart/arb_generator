@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: kuhnroyal/flutter-fvm-config-action@v2
+      - uses: kuhnroyal/flutter-fvm-config-action@v3
         id: fvm-config-action
       - uses: subosito/flutter-action@v2
         with:
@@ -16,5 +16,7 @@ jobs:
         run: dart pub get
       - name: Lint
         run: dart analyze
+      - name: Format
+        run: dart format . --set-exit-if-changed
       - name: Unit tests
         run: dart test

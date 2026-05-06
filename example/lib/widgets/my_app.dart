@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../l10n/app_localizations.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -10,50 +10,38 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late String _locale;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _locale = 'en';
-  }
+  var _locale = Locale('en');
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale(_locale),
+      locale: _locale,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('arb_generator'),
-        ),
+        appBar: AppBar(title: const Text('arb_generator')),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (final locale in AppLocalizations.supportedLocales) ...[
-                    ElevatedButton(
-                      onPressed: () =>
-                          setState(() => _locale = locale.toString()),
-                      child: Text(locale.toString()),
-                    ),
-                    const SizedBox(width: 8),
-                  ]
-                ],
-              ),
-              const SizedBox(height: 8),
-              const HomeScreen(),
-            ],
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              spacing: 8,
+              children: [
+                SegmentedButton(
+                  segments: AppLocalizations.supportedLocales
+                      .map(
+                        (locale) => ButtonSegment(
+                          value: locale,
+                          label: Text(locale.toString()),
+                        ),
+                      )
+                      .toList(),
+                  selected: {_locale},
+                  onSelectionChanged: (newSelection) =>
+                      setState(() => _locale = newSelection.first),
+                ),
+                const HomeScreen(),
+              ],
+            ),
           ),
         ),
       ),
@@ -62,9 +50,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    Key? key,
-  }) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

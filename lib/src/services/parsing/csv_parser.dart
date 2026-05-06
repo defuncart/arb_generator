@@ -9,7 +9,7 @@ class CSVParser extends FileParser {
   /// The delimiter to separate fields (i.e. `,` or `;`)
   final String fieldDelimiter;
 
-  final CsvToListConverter _csvConverter = CsvToListConverter();
+  final _csvConverter = CsvToListConverter();
 
   CSVParser({
     required File file,
