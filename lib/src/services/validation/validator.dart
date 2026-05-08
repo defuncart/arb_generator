@@ -4,7 +4,6 @@ import '../../configs/constants.dart' as constants;
 import '../../extensions/file_extensions.dart';
 import '../../extensions/string_extensions.dart';
 import '../../models/settings/csv_settings.dart';
-import '../parsing/file_parser.dart';
 
 abstract class Validator {
   /// Validates whether [file] is valid
@@ -45,57 +44,46 @@ abstract class Validator {
     }
   }
 
-  /// Validates whether [localizationsTable] is valid
-  ///
-  /// If any error occurs, process is terminated
-  static void validateLocalizationsTable(
-    List<LocalizationTableRow> localizationsTable,
-  ) {
-    if (localizationsTable.isEmpty) {
-      print('No keys found.');
-    }
-  }
-
   /// Validates whether [row] is valid
   ///
   /// If any error occurs, process is terminated
-  static void validateLocalizationTableRow(
-    LocalizationTableRow row, {
-    required int numberSupportedLanguages,
-  }) {
-    final key = row.key;
-    if (constants.reservedWords.contains(key)) {
-      print(
-        'Key $key in row ${row.raw} is a reserved keyword in Dart and is thus invalid.',
-      );
-    }
+  // static void validateLocalizationTableRow(
+  //   LocalizationTableRow row, {
+  //   required int numberSupportedLanguages,
+  // }) {
+  //   final key = row.key;
+  //   if (constants.reservedWords.contains(key)) {
+  //     print(
+  //       'Key $key in row ${row.raw} is a reserved keyword in Dart and is thus invalid.',
+  //     );
+  //   }
 
-    if (constants.types.contains(key)) {
-      print(
-        'Key $key in row ${row.raw} is a type in Dart and is thus invalid.',
-      );
-    }
+  //   if (constants.types.contains(key)) {
+  //     print(
+  //       'Key $key in row ${row.raw} is a type in Dart and is thus invalid.',
+  //     );
+  //   }
 
-    if (!key.isValidVariableName) {
-      print(
-        'Key $key in row ${row.raw} is invalid. Expected key in the form lowerCamelCase.',
-      );
-    }
+  //   if (!key.isValidVariableName) {
+  //     print(
+  //       'Key $key in row ${row.raw} is invalid. Expected key in the form lowerCamelCase.',
+  //     );
+  //   }
 
-    final words = row.words;
-    if (words.length > numberSupportedLanguages) {
-      print(
-        'The row ${row.raw} does not seem to be well formatted. Found ${words.length} values for numberSupportedLanguages locales.',
-      );
-    }
+  //   final words = row.words;
+  //   if (words.length > numberSupportedLanguages) {
+  //     print(
+  //       'The row ${row.raw} does not seem to be well formatted. Found ${words.length} values for numberSupportedLanguages locales.',
+  //     );
+  //   }
 
-    final defaultWord = row.defaultWord;
-    if (defaultWord.isEmpty) {
-      print(
-        'Key $key in row ${row.raw} has no translation for default language.',
-      );
-    }
-  }
+  //   final defaultWord = row.defaultWord;
+  //   if (defaultWord.isEmpty) {
+  //     print(
+  //       'Key $key in row ${row.raw} has no translation for default language.',
+  //     );
+  //   }
+  // }
 
   /// Validates whether a [csvSettings] instance has valid parameters
   ///

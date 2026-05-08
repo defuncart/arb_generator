@@ -18,7 +18,9 @@ class CSVParser extends FileParser {
   }) : super(file: file, startIndex: startIndex);
 
   @override
-  void parseFile() {
+  List<List<String>> parseFile() {
+    final parsedContents = <List<String>>[];
+
     final lines = file.readAsLinesSync();
     for (final line in lines) {
       final lineElements = _csvConverter
@@ -29,5 +31,7 @@ class CSVParser extends FileParser {
 
       parsedContents.add(lineElements);
     }
+
+    return parsedContents;
   }
 }

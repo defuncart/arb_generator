@@ -7,6 +7,7 @@ import '../models/arb/arb_file.dart';
 import '../models/settings/package_settings.dart';
 import 'file_writer/file_writer.dart';
 import 'parsing/csv_parser.dart';
+import 'parsing/file_parser.dart';
 import 'validation/validator.dart';
 
 /// A service which generates arb files
@@ -36,33 +37,26 @@ abstract class ARBGenerator {
       startIndex: packageSettings.csvSettings.baseIndex,
       fieldDelimiter: packageSettings.csvSettings.delimiter,
     );
+    final table = parser.parse(
+      descriptionIndex: packageSettings.csvSettings.descriptionIndex,
+    );
 
-    final supportedLanguages = parser.supportedLanguages;
-    Validator.validateSupportedLanguages(supportedLanguages);
-
-    print('Locales $supportedLanguages determined.');
-
-    final localizationsTable = parser.localizationsTable;
-    print('Parsing ${localizationsTable.length} key(s)...');
+    print('Locales ${table.supportedLanguages} determined.');
+    print('Parsing ${table.rows.length} key(s)...');
 
     final encoder = JsonEncoder.withIndent('  ');
 
-    for (final row in localizationsTable) {
-      Validator.validateLocalizationTableRow(
-        row,
-        numberSupportedLanguages: supportedLanguages.length,
-      );
-    }
+    // for (final row in localizationsTable) {
+    //   Validator.validateLocalizationTableRow(
+    //     row,
+    //     numberSupportedLanguages: supportedLanguages.length,
+    //   );
+    // }
 
-    for (final supportedLanguage in supportedLanguages) {
+    for (final supportedLanguage in table.supportedLanguages) {
       final content = _generateARBFile(
         language: supportedLanguage,
-        keys: parser.keys,
-        values: parser.getValues(supportedLanguage),
-        defaultValues: parser.defaultValues,
-        descriptions: packageSettings.csvSettings.descriptionIndex != null
-            ? parser.getColumn(packageSettings.csvSettings.descriptionIndex!)
-            : null,
+        rows: table.rows,
         optionalMetadata: optionalMetadata,
       );
       var prettyContent = encoder.convert(content.toJson());
@@ -70,8 +64,10 @@ abstract class ARBGenerator {
       prettyContent = prettyContent.replaceAll('\\\\', '\\');
 
       // write output file
-      final path =
-          '${packageSettings.outputDirectory}/${packageSettings.filenamePrepend}$supportedLanguage.arb';
+      final path = p.join(
+        packageSettings.outputDirectory,
+        '${packageSettings.filenamePrepend}$supportedLanguage.arb',
+      );
       FileWriter().write(
         contents: prettyContent,
         path: path,
@@ -104,35 +100,21 @@ Map<String, dynamic>? _loadOptionalMetadata(
 
 ARBFile _generateARBFile({
   required String language,
-  required List<String> keys,
-  required List<String> values,
-  required List<String> defaultValues,
-  List<String>? descriptions,
+  required List<LocalizationTableRow> rows,
   Map<String, dynamic>? optionalMetadata,
 }) {
-  if (keys.length != values.length && keys.length != defaultValues.length) {
-    print('Error! Mismatch number of keys and values');
-    exit(0);
-  }
-
-  final messages = <Message>[];
-  for (final (i, key) in keys.indexed) {
-    final value = i < values.length && values[i].isNotEmpty
-        ? values[i]
-        : defaultValues[i];
-
-    // safety check in case user forgot @
-    final metadata = optionalMetadata?['@$key'] ?? optionalMetadata?[key];
-
-    messages.add(
-      Message(
-        key: key,
-        value: value,
-        description: descriptions?[i],
-        metadata: metadata,
-      ),
-    );
-  }
+  final messages = rows
+      .map(
+        (row) => Message(
+          key: row.key,
+          description: row.description,
+          value: row.values[language]!,
+          // safety check in case user forgot @
+          metadata:
+              optionalMetadata?['@${row.key}'] ?? optionalMetadata?[row.key],
+        ),
+      )
+      .toList();
 
   return ARBFile(locale: language, messages: messages);
 }
