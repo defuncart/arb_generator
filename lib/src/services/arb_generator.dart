@@ -121,10 +121,8 @@ ARBFile _generateARBFile({
         ? values[i]
         : defaultValues[i];
 
+    // safety check in case user forgot @
     final metadata = optionalMetadata?['@$key'] ?? optionalMetadata?[key];
-    // if (metadata != null) {
-    //   print('Adding metadata $metadata to $key');
-    // }
 
     messages.add(
       Message(
