@@ -116,7 +116,7 @@ abstract class AppLocalizations {
   /// **'{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}}'**
   String numberMessages(int count);
 
-  /// A message determine whose book it is
+  /// A message determining whose book it is
   ///
   /// In en, this message translates to:
   /// **'{sex, select, male{His book} female{Her book} other{Their book}}'**

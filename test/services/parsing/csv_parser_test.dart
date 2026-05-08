@@ -32,7 +32,7 @@ void main() {
       ],
       [
         'whoseBook',
-        'A message determine whose book it is',
+        'A message determining whose book it is',
         '{sex, select, male{His book} female{Her book} other{Their book}}',
         '{sex, select, male{Sein Buch} female{Ihr Buch} other{Ihr Buch}}',
       ],
