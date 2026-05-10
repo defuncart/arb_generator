@@ -12,12 +12,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get myKey => 'Hello world!';
 
   @override
-  String welcome(Object firstName) {
+  String welcome(String firstName) {
     return 'Welcome $firstName!';
   }
 
   @override
-  String numberMessages(num count) {
+  String numberMessages(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
@@ -42,7 +42,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String unreadEmails(num howMany, Object userName) {
+  String unreadEmails(int howMany, String userName) {
     String _temp0 = intl.Intl.pluralLogic(
       howMany,
       locale: localeName,

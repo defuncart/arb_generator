@@ -108,15 +108,15 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Welcome {firstName}!'**
-  String welcome(Object firstName);
+  String welcome(String firstName);
 
   /// An info message about new messages count
   ///
   /// In en, this message translates to:
   /// **'{count, plural, zero{You have no new messages} one{You have 1 new message} other{You have {count} new messages}}'**
-  String numberMessages(num count);
+  String numberMessages(int count);
 
-  /// A message determine whose book it is
+  /// A message determining whose book it is
   ///
   /// In en, this message translates to:
   /// **'{sex, select, male{His book} female{Her book} other{Their book}}'**
@@ -126,7 +126,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'{howMany, plural, zero{There are no unread emails for {userName}} one{There is 1 unread email for {userName}} other{There are {howMany} unread emails for {userName}}}'**
-  String unreadEmails(num howMany, Object userName);
+  String unreadEmails(int howMany, String userName);
 
   /// Reaction to types of weather
   ///

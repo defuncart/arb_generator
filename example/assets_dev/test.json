@@ -1,0 +1,30 @@
+{
+    "@welcome": {
+        "placeholders": {
+            "firstName": {
+                "type": "String",
+                "example": "Dash"
+            }
+        }
+    },
+    "@numberMessages": {
+        "placeholders": {
+            "count": {
+                "type": "int",
+                "example": "1"
+            }
+        }
+    },
+    "unreadEmails": {
+        "placeholders": {
+            "howMany": {
+                "type": "int",
+                "example": "1"
+            },
+            "userName": {
+                "type": "String",
+                "example": "dash"
+            }
+        }
+    }
+}
