@@ -1,7 +1,7 @@
 name: example
 description: An example for arb_generator.
 publish_to: 'none'
-version: 0.0.4
+version: 0.1.0
 
 environment:
   sdk: ^3.8.0

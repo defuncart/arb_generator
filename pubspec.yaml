@@ -1,9 +1,17 @@
 name: arb_generator
 description: A dart tool which generates ARB localization files from CSV files.
-version: 0.0.4
+version: 0.1.0
 homepage: https://github.com/defuncart/arb_generator
 repository: https://github.com/defuncart/arb_generator
 issue_tracker: https://github.com/defuncart/arb_generator/issues
+documentation: https://github.com/defuncart/arb_generator
+
+topics:
+  - arb
+  - i18n
+  - intl
+  - l10n
+  - localization
 
 environment:
   sdk: ^3.8.0

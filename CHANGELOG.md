@@ -1,4 +1,4 @@
-## [0.1.0] - 
+## [0.1.0] - 10/05/2026
 
 * Set Dart 3.8 as minimum constraint
 * Ability to set optional placeholder metadata
